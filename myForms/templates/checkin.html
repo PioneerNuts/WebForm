@@ -1,0 +1,23 @@
+{% block content %}
+{% include 'navbar.html' %}
+
+<div>
+
+    <div style="display: flex; justify-content: center;">
+        <h1 class="text-primary">CHECK IN FORM FOR THE EMPLOYEE</h1>
+    </div>
+
+        <br><br>
+    <div style="justify-content: center; display: flex;">
+        <form method="POST">
+            {% csrf_token %}
+            {{ ch_form.as_p }}
+            <br>
+            <div style="justify-content: center; display: flex;">    
+                <button type="submit" class="btn btn-primary" style="border-radius: 5px; width: 250px; margin-top: 20px;">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
