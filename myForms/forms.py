@@ -16,8 +16,7 @@ class ContactForm(forms.ModelForm):
     Loc= forms.TextInput()
     Working = forms.TextInput()
     Type = forms.TextInput()
-    # Time = forms.DateTimeField()
-    
+    #Time = forms.DateTimeField()
     Comments = forms.TextInput()
 
     class Meta:
@@ -74,7 +73,7 @@ class HazardForm(forms.ModelForm):
 #     sh_wallnut =forms.TextInput()
 #     Desc= forms.TextInput()
 #     class Meta:
-#         model = form2
+#         model = forms
 #         fields = ["sh_wallnut", "Desc"]
 
 

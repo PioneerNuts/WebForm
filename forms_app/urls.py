@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.contrib.auth.views import LoginView
-from myForms.views import home,hazard,Check,register_request,login_request,logout_request, pioneer_home,message_view,about_us,contact_us
+from myForms.views import home,Check,register_request,login_request,logout_request, pioneer_home,message_view,about_us,contact_us,hazard
 
 
 urlpatterns = [

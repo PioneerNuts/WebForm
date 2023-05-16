@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import ContactForm,HazardForm,CheckIN,NewUserForm
+from .forms import ContactForm,CheckIN,NewUserForm,HazardForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login,authenticate,logout
 from django.contrib import messages
@@ -75,7 +75,7 @@ def register_request(request):
 			user = form.save()
 			login(request, user)
 			messages.success(request, "Registration successful." )
-			return render(request, 'home.html')
+			return render(request, 'pioneer.html')
 		messages.error(request, "Unsuccessful registration. Invalid information.")
 	form = NewUserForm()
 	return render (request=request, template_name="register.html", context={"register_form":form})

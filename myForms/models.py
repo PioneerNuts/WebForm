@@ -39,7 +39,6 @@ class Hazard_material(models.Model):
 
     shelling =models.CharField(max_length=50, choices=HazarType, default="B")
     Desc3= models.CharField(max_length=50, default="1")
-
     Time = models.DateTimeField(default=timezone.now)
 
     sizer =models.CharField(max_length=50, choices=HazarType, default="B")
