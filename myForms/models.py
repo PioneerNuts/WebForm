@@ -1,5 +1,8 @@
+
 from django.db import models
 from django.utils import timezone
+from datetime import datetime, timedelta
+
 
 class Metal_detection(models.Model):
 
@@ -18,7 +21,7 @@ class Metal_detection(models.Model):
     Loc= models.CharField(max_length=50)
     Working = models.CharField(max_length=5, choices=Work)
     Type = models.CharField(max_length=20, choices=MaterialType)
-    Time = models.DateTimeField(default=timezone.now)
+    
     Comments = models.CharField(max_length=200)
    
 class Hazard_material(models.Model):
@@ -39,7 +42,7 @@ class Hazard_material(models.Model):
 
     shelling =models.CharField(max_length=50, choices=HazarType, default="B")
     Desc3= models.CharField(max_length=50, default="1")
-    Time = models.DateTimeField(default=timezone.now)
+    Time= models.DateTimeField(default=(timezone.now))
 
     sizer =models.CharField(max_length=50, choices=HazarType, default="B")
     Desc4= models.CharField(max_length=50, default="1")
@@ -66,3 +69,30 @@ class Emp_wellness(models.Model):
     hair=models.CharField(max_length=50,choices=Yn,default='1')
     food=models.CharField(max_length=50,choices=Yn,default='1')
     food_package=models.CharField(max_length=50,choices=Yn,default='1')
+
+
+
+
+
+class metal_d(models.Model):
+
+    Work = (
+        ('1', 'Yes'),
+        ('2', 'No')
+    )
+    MaterialType = (
+        ('F', 'Ferrous'),
+        ('N', 'Non-Ferrous'),
+        ('S', 'Stainless-Steel')
+    )
+    
+    Emp = models.CharField(max_length=50)
+    InsNo = models.CharField(max_length=50)
+    Loc= models.CharField(max_length=50)
+    Working = models.CharField(max_length=5, choices=Work)
+    Type = models.CharField(max_length=20, choices=MaterialType)
+
+    Time = models.DateTimeField(default=(timezone.now))
+    
+    Comments = models.CharField(max_length=200)
+   

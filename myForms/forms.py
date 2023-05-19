@@ -1,6 +1,6 @@
 from django import forms
-from django.utils.timezone import now
-from .models import Metal_detection,Emp_wellness,Hazard_material
+# from django.utils.timezone import now
+from .models import Metal_detection,Emp_wellness,Hazard_material, metal_d
 from django.forms import ModelForm
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Submit, Row, Column
@@ -16,12 +16,11 @@ class ContactForm(forms.ModelForm):
     Loc= forms.TextInput()
     Working = forms.TextInput()
     Type = forms.TextInput()
-    #Time = forms.DateTimeField()
     Comments = forms.TextInput()
 
     class Meta:
-        model = Metal_detection
-        fields = ('Emp','InsNo','Loc','Working','Type','Comments')
+        model = metal_d
+        fields = ('Emp','InsNo','Loc','Working','Type', 'Comments')
 
 
 class HazardForm(forms.ModelForm):
@@ -37,7 +36,7 @@ class HazardForm(forms.ModelForm):
     #new row
     sorting=forms.TextInput()
     Desc3= forms.TextInput()
-
+    
 
     ## new row 
     shelling=forms.TextInput()
@@ -48,34 +47,9 @@ class HazardForm(forms.ModelForm):
     sizer=forms.TextInput()
     Desc5= forms.TextInput()
 
-    
-
-
-    # def __init__(self, *args, **kwargs):
-    #     super().__init__(*args, **kwargs)
-    #     self.helper = FormHelper()
-    #     self.helper.layout = Layout(
-    #         Row(
-    #             Column('sh_wallnut', css_class='form-group col-md-6 mb-0'),
-    #             Column('Desc', css_class='form-group col-md-6 mb-0'),
-    #             css_class='form-row'
-    #         ),
-    #     )
-    
-
-    
-
     class Meta:
         model = Hazard_material
         fields = ('sh_wallnut','Desc', 'rc_shwallnut', 'Desc1', 'sorting','Desc2', 'shelling','Desc3','sizer','Desc4')
-
-# class test(forms.ModelForm):
-#     sh_wallnut =forms.TextInput()
-#     Desc= forms.TextInput()
-#     class Meta:
-#         model = forms
-#         fields = ["sh_wallnut", "Desc"]
-
 
 class CheckIN(forms.ModelForm):
     Yn= (

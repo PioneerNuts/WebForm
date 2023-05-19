@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)!@cbo$wk2i($l2vhu&73_x=&h20)^uo$w79&es$w3ba#i=@3k'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -84,16 +84,7 @@ WSGI_APPLICATION = 'forms_app.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-    #     'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    #     'NAME': 'PostgresDatabase',
-    #     'USER': 'pioneer1',
-    #     'PASSWORD': 'pioneer64',
-    #     'HOST': 'formdatabase.chmmse1shoup.us-west-1.rds.amazonaws.com',
-    #     'PORT': '5432',
 
-    'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -122,12 +113,12 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'US/Pacific'
+
+USER_TIME_ZONE = 'US/Pacific'  
 
 USE_I18N = True
-
-USE_TZ = True
-
+USE_L10N = True
+USE_TZ = True  #
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
